@@ -1,0 +1,73 @@
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    font-family: sans-serif;
+
+}
+
+.leftview{
+    width:40%;
+    height: 100%;
+    display: flex;
+    border-right: 1px solid #898989;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightview{
+ height: 100%;
+ width: 60%;
+ display: flex;
+ background-image: url("../../public/images/backdorp.jpg"); 
+ background-size: cover;
+ background-position: center;
+}
+.logo-area{
+    display: flex;
+    height: 40%;
+}
+
+.form-input{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.input-div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-div input {
+    outline: none;
+    padding: 10px;
+    
+}
+
+.input-div label{
+    font-size: 15px;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+.submit-div button{
+    width: 100%;
+    padding: 10px;
+    background-color: #5F1B27;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+
+}

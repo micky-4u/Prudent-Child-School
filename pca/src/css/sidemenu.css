@@ -1,0 +1,59 @@
+.sideMenuContainer{
+    display: flex;
+    width: 200px;
+    height: 100%;
+    background-color: #E3DCD3;
+    flex-direction: column;
+    /* position: absolute; */
+    /* border: 1px solid black; */
+}
+.menus{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+ul{
+    display: flex;
+    margin-left: -30px;
+    display: block;
+    
+}
+
+
+ul li{
+    list-style-type: none;
+    width: 170px;
+    margin-bottom: 10px;
+}
+
+
+ul li a{
+    color: #000;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+    text-decoration: none;
+    padding: 6px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ul li a svg{
+    margin-right:10px ;
+}
+
+ul li a:hover{
+    background-color: #5F1B27;
+    color: #fff;
+
+}
+
+.active{
+    background-color: #5F1B27;
+    color: #fff;
+}
