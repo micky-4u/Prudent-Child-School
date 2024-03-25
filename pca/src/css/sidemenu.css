@@ -4,12 +4,14 @@
     height: 100%;
     background-color: #E3DCD3;
     flex-direction: column;
+    justify-content: space-between;
     /* position: absolute; */
     /* border: 1px solid black; */
 }
 .menus{
     display: flex;
     flex-direction: column;
+    height: 70%;
     
 }
 
@@ -39,7 +41,7 @@ ul li a{
     text-decoration: none;
     padding: 6px 15px;
     display: flex;
-    justify-content: center;
+    justify-content: flex;
     align-items: center;
 
 }
@@ -56,4 +58,18 @@ ul li a:hover{
 .active{
     background-color: #5F1B27;
     color: #fff;
+}
+
+
+.configs::before{
+    content: "_______________";
+    width: 100%;
+    margin-left: 20px;
+    /* border-bottom: 1px solid #000; */
+}
+.logoArea {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
 }
