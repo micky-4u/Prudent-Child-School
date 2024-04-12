@@ -5,12 +5,14 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import '../css/login.css'
 import { useNavigate } from 'react-router-dom';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 // import {}
 
 const users = [
     {
-        "UserId":"12345",
-        "Password":"micky",
+        "UserId":"admin",
+        "Password":"admin",
         
     }
 ]
@@ -19,12 +21,16 @@ const Login = () =>{
     const [userId, setUserId] = useState('')
     const [password, setPassword] = useState('')
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-
+    const [role, setRole] =useState('');
     const navigate = useNavigate()
 
 
     const handleUserIdChange = (e) =>{
         setUserId(e.target.value)
+    }
+
+    const handleRole = (e) =>{
+        setRole(e.target.value)
     }
 
     const handlePasswordChange = (e) =>{
@@ -54,10 +60,12 @@ const Login = () =>{
         <div className='container'>
             <div className="leftview">
                 <div className="logo-area">
-                    <div className="logo">
-
-                    </div>
-                    <div className="title">
+                    
+                        <div>
+                            <img src="logo_prev_ui.png" alt="" height="50" width="50"/>
+                        </div>
+                    
+                    <div>
                         <p>Login</p>
                     </div>
                 </div>
@@ -65,6 +73,23 @@ const Login = () =>{
                     <div className="radio-area"></div>
                     <div className="form-input">
                         <form action="" className='form' onSubmit={handleSubmit}>
+                            <div>
+                                <RadioGroup
+                                        aria-labelledby="demo-controlled-radio-buttons-group"
+                                        name="controlled-radio-buttons-group"
+                                        value={role}
+                                        onChange={handleRole}
+                                        color='#5F1B27'
+                                        style={{
+                                            display:'flex',
+                                            flexDirection: 'row',
+                                            justifyContent: 'space-between'
+                                        }}
+                                    >
+                                        <FormControlLabel value="student" control={<Radio sx={{color:"#5F1B27",'&.Mui-checked': {color:'#5F1B27',},}}/>} label="Student" />
+                                        <FormControlLabel value="staff" control={<Radio sx={{color:"#5F1B27",'&.Mui-checked': {color:'#5F1B27',},}} />} label="Staff" />
+                                </RadioGroup>
+                            </div>
 
                             <div className="input-div">
                                 <label htmlFor="id">ID</label>

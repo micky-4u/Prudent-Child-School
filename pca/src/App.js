@@ -6,7 +6,11 @@ import {
 } from "react-router-dom";
 import Login from './pages/login'
 import Dashboard from './pages/dashboard'
-
+import Admission from './pages/admission';
+import ClassRooms from './pages/classRooms';
+import Academics from './pages/academics';
+import Classes from './pages/classes';
+import Graduations from './pages/graduation';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +20,26 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />
+  },
+  {
+    path: "/students",
+    element: <Admission />
+  },
+  {
+    path: "/classes",
+    element: <Classes />
+  },
+  {
+    path: "/academics",
+    element: <Academics />
+  },
+  {
+    path : "/classrooms",
+    element: <ClassRooms />
+  },
+  {
+    path: "/graduations",
+    element: <Graduations />
   }
 ]);
 

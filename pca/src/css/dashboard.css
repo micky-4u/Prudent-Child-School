@@ -1,4 +1,10 @@
 .leftMenu{
-    width: 20%;
+    width: 200px;
     height: 100%;
+    margin: 0;
+}
+
+.rightContent, .student-app{
+    width: 86%;
+    margin: 0;
 }

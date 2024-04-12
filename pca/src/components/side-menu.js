@@ -32,9 +32,9 @@ const SideMenu = () =>{
                             </Link>
                         </li>
                         <li>
-                            <Link to ="/admission" className={pathname === '/admission' ? 'active ' : ''}>
+                            <Link to ="/students" className={pathname === '/students' ? 'active ' : ''}>
                             <NoteAddIcon />
-                                Admission
+                                Students
                             </Link>
                         </li>
                         <li>
@@ -66,13 +66,13 @@ const SideMenu = () =>{
                 <div className="configs">
                     <ul>
                     <li>
-                            <Link to ="/classrooms">
+                            <Link to ="/settings">
                             <SettingsIcon />
                                 Settings
                             </Link>
                     </li>
                     <li>
-                            <Link to ="/classrooms">
+                            <Link to ="/logout">
                             <PowerSettingsNewIcon />
                                 Logout
                             </Link>

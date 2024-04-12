@@ -1,5 +1,150 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+  background-color: #f5eded;
+}
+
+.header{
+  width: 100%;
+  /* border-bottom: 1px solid #000; */
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.header div{
+  width: 40%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header div p{
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.mainView{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f5eded;
+}
+
+
+.stats div{
+  margin-right: 10px;
+}
+
+.card {
+  /* height: 80px; */
+  width: 250px;
+  border: 1px solid #ada6a6;
+  border-radius: 2px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+
+  & p{
+    font-size: 17px;
+    margin: 0;
+    margin-bottom: 10px ;
+  }
+
+  & span{
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+.population{
+  display: flex;
+}
+
+.notics{
+  width: 400px;
+  border: 1px solid #C7B7A3;
+  padding: 10px;
+  height: 500px;
+  background-color: #fff;
+
+  & div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  & div p {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+
+.progress-bar{
+  display: flex;
+  margin-top: 10px;;
+  display: none;
+
+  & div{
+    width:250px;
+    padding: 5px 10px;
+    display: flex;
+  }
+  & div p {
+    margin: 0;
+  }
+
+}
+
+
+.mini-info .progress{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #E8D8C4 linear-gradient(to right, transparent 50%, #6D2932 0);
+
+  & h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &::before{
+    content: "";
+    display: block;
+    margin-left: 50%;
+    transform-origin: left;
+    border-radius: 0 100% 100% 0/50%;
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: #fff;
+  }
+}
+
+.break{
+
+  & p{
+    width: 150px;
+  }
 }

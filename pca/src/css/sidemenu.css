@@ -1,8 +1,8 @@
 .sideMenuContainer{
     display: flex;
-    width: 200px;
+    width: 100%;
     height: 100%;
-    background-color: #E3DCD3;
+    background-color: #fff;
     flex-direction: column;
     justify-content: space-between;
     /* position: absolute; */

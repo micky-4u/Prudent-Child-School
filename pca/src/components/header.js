@@ -1,10 +1,24 @@
 import React from "react";
+import "../css/index.css"
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const Header = () =>{
 
+
+const Header = (props) =>{
+    const {user, title} = props;
     return (
         <>
-            <h1>Header</h1>
+            <div className="header">
+                <div className="title">
+                    <p>{title}</p>
+                </div>
+                <div className="user">
+                    <AccountCircleIcon />
+                    <p>{user.name}</p>
+                <div className="date"></div>
+                </div>
+
+            </div>
         </>
     )
 }
