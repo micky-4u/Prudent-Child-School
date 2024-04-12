@@ -74,12 +74,19 @@ const Admission = () =>{
                             <h3>Students</h3>
                         </div>
                         <div className="tools">
-                            <div className="search">
-
-                            </div>
-                            <div className="add-new">
-
-                            </div>
+                            
+                                <input
+                                    type="text"
+                                    placeholder="Search by name..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                />
+                            
+                            
+                                <button>
+                                    Register Student
+                                </button>
+                            
                         </div>
                         <div className="student-table">
                             <table>

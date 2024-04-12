@@ -110,6 +110,36 @@ form {
 }
 
 .data:hover{
-    background-color: #dbd5d5;
+    /* background-color: #dbd5d5; */
     cursor: pointer;
+}
+
+.tools{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    & input, button{
+        padding: 10px;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        background-color: #fff;
+    }
+
+    & input{
+        width: 60%;
+    }
+    & button{
+        width: 20%;
+        background-color:#C7B7A3;
+        color: #5F1B27;
+
+    }
+    & button:hover{
+        cursor: pointer;
+    }
 }
