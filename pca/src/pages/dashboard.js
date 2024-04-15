@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Header from "../components/header"
 import SideMenu from "../components/side-menu"
 import "../css/dashboard.css"
@@ -6,7 +6,7 @@ import { Card } from "@mui/material";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { BarChart } from '@mui/x-charts/BarChart';
-import {uData, pData,xLabels} from "../data"
+import {uData, pData,xLabels, Student} from "../data"
 import CircularProgress from '@mui/joy/CircularProgress';
 
 
@@ -16,6 +16,7 @@ import CircularProgress from '@mui/joy/CircularProgress';
 
 const PopulationCard =(props) => {
     const {icon, total, dis} = props
+
     return (
         <>
             <div className="card">
@@ -55,10 +56,21 @@ const Notificatin = () =>{
 
 
 const Dashboard = () =>{
-    const user = {
-        name:"Michael"
+    const [studentsData,setStudentDate] = useState([])
+    const [staffData, setStaffData] = useState([])
+    const [user, setUser] = useState([])
+
+    useEffect(() =>{
+        setStudentDate(Student)
+        const __user = [{
+            name:"Michael"
+        
+        }]
+        setUser(__user)
     
-    }
+    },[])
+
+
 
     return (
         <>
@@ -71,8 +83,8 @@ const Dashboard = () =>{
                     <div className="mainView">
                         <div className="stats">
                             <div className="population">
-                                <PopulationCard  dis = "Total Student"total = "1234"  icon ={<GroupsIcon  fontSize="large"/>} />
-                                <PopulationCard  dis = "Total Staff"total = "34" />
+                                <PopulationCard  dis = "Total Student" total = {studentsData.length}  icon ={<GroupsIcon  fontSize="large"/>} />
+                                <PopulationCard  dis = "Total Staff"total = {staffData.length} />
                             </div>
 
                             <div className="progress-bar">

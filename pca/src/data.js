@@ -27,3 +27,7 @@ export const Student = [
   { id: 2, name: 'Jane Smith', likes: 0, dislikes: 0 },
   { id: 3, name: 'Bob Johnson', likes: 0, dislikes: 0 },
 ]
+
+export const Staffs =[
+
+]

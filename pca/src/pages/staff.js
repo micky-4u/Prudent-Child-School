@@ -3,11 +3,11 @@ import Header from "../components/header"
 import SideMenu from "../components/side-menu"
 import "../css/dashboard.css"
 import "../css/admission.css"
-import { Student } from "../data";
+import { Staffs } from "../data";
 
-const Admission = () =>{
+const Staff = () =>{
     const [modal, setModal] = useState(false)
-    const [student, setStudent] = useState(Student)
+    const [student, setStudent] = useState(Staffs)
     const [searchQuery, setSearchQuery] = useState('');
     const [formData, setFormData] = useState({
         firstName: '',
@@ -50,7 +50,7 @@ const Admission = () =>{
     }
 
 
-    const filteredData = Student.filter(item =>
+    const filteredData = Staffs.filter(item =>
         item.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
 
@@ -71,13 +71,13 @@ const Admission = () =>{
                     <SideMenu />
                 </div>
                 <div className="rightContent">
-                    <Header user = {user} title ="Students"/>
+                    <Header user = {user} title ="Staff"/>
 
                     {/* Table of all student */}
                     
                     <div style ={{display: modal ==false ? 'block' : 'none'}}id= "student-list" className="student-list">
                     <div className="page-label">
-                            <h3>Students</h3>
+                            <h3>Staff</h3>
                         </div>
                         <div className="tools">
                             
@@ -90,7 +90,7 @@ const Admission = () =>{
                             
                             
                                 <button onClick={handleRegistration}>
-                                    Register Student
+                                    Add Staff
                                 </button>
                             
                         </div>
@@ -106,6 +106,7 @@ const Admission = () =>{
                                 </thead>
 
                                 <tbody>
+
                                     {filteredData.map(item => (
                                         <tr className="data" key={item.id}>
                                         <td>{item.id}</td>
@@ -127,12 +128,12 @@ const Admission = () =>{
                     </div>
 
 
-                    {/* Student Registration */}
+                    {/* Staff Registration */}
                     {modal && 
                     
                     <div id = "register" className="registerView">
                         <div className="page-label">
-                            <h3>New Student Application Form</h3>
+                            <h3>New Staff Application Form</h3>
                         </div>
                             <form onSubmit={handleSubmit}>
                                 <div className="aca-info">
@@ -275,4 +276,4 @@ const Admission = () =>{
     )
 }
 
-export default Admission;
+export default Staff;

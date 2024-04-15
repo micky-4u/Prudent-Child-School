@@ -38,6 +38,12 @@ const SideMenu = () =>{
                             </Link>
                         </li>
                         <li>
+                            <Link to ="/staff" className={pathname === '/staff' ? 'active ' : ''}>
+                            <NoteAddIcon />
+                                Staff
+                            </Link>
+                        </li>
+                        <li>
                             <Link to ="/academics" className={pathname === '/academics' ? 'active ' : ''}>
                             <AutoStoriesIcon />
                                 Academics

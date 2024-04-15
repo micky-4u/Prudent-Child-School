@@ -11,6 +11,7 @@ import ClassRooms from './pages/classRooms';
 import Academics from './pages/academics';
 import Classes from './pages/classes';
 import Graduations from './pages/graduation';
+import Staff from './pages/staff'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
     path: "/students",
     element: <Admission />
   },
+  {
+    path: "/staff",
+    element: <Staff />
+  },
+
   {
     path: "/classes",
     element: <Classes />

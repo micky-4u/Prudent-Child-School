@@ -1,5 +1,5 @@
 .registerView{
-    display: none;
+    /* display: none; */
 }
 
 .aca-info, .stu-info{
@@ -141,5 +141,6 @@ form {
     }
     & button:hover{
         cursor: pointer;
+        
     }
 }
