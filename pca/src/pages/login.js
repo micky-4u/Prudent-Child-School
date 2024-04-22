@@ -7,26 +7,22 @@ import '../css/login.css'
 import { useNavigate } from 'react-router-dom';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
+import { getAxisUtilityClass } from '@mui/x-charts/ChartsAxis';
+import axios from 'axios'
 // import {}
 
-const users = [
-    {
-        "UserId":"admin",
-        "Password":"admin",
-        
-    }
-]
 const Login = () =>{
 
     const [userId, setUserId] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [isLoggedIn, setIsLoggedIn] = useState(true)
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [role, setRole] =useState('');
     const navigate = useNavigate()
 
 
     const handleUserIdChange = (e) =>{
-        setUserId(e.target.value)
+        setEmail(e.target.value)
     }
 
     const handleRole = (e) =>{
@@ -37,23 +33,27 @@ const Login = () =>{
         setPassword(e.target.value)
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault()
-        console.log(users)
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/user/login/', {
+                email,
+                password
+            });
+            console.log(response.data.message)
+            
 
-        const authUser = users.forEach((user) =>{
-            user.UserId == userId && user.Password ==password
-            setIsLoggedIn(true)
-            setUserId("")
-
-        })
-        
-        if(isLoggedIn){
-            navigate("/dashboard")
-        }else{
-            alert("Invalid Username or Password")
+            if(response.data.message === "Login Successful"){
+                setIsLoggedIn(true)
+                navigate("/dashboard")
+                setEmail("")
+                setPassword("")
+            }
+            
+        } catch (error){
+            console.log("Error Occured")
+            console.log(error)
         }
-
     }
 
     return(
@@ -92,12 +92,12 @@ const Login = () =>{
                             </div>
 
                             <div className="input-div">
-                                <label htmlFor="id">ID</label>
+                                <label htmlFor="email">Email</label>
                                 <input 
                                     type="text" 
-                                    id="id" 
-                                    placeholder='Eg 1198563' 
-                                    onChange={handleUserIdChange}
+                                    id="email" 
+                                    placeholder='example@domain.com' 
+                                    onChange={(e) => setEmail(e.target.value)}
                                     
                                     />
                             </div>
@@ -106,9 +106,8 @@ const Login = () =>{
                                 <label htmlFor="pin">Pin</label>
                                 <input 
                                     type="password" 
-                                    id="password" 
                                     placeholder='Eg 43985' 
-                                    onChange={handlePasswordChange}
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
                             </div>
 

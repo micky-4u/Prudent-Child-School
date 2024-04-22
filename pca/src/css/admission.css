@@ -144,3 +144,21 @@ form {
         
     }
 }
+
+.submit{
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 10px;
+
+    & button {
+        width: 100px;
+        padding: 10px;
+        font-weight: bold;
+        background-color: #5F1B27;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        color : #fff;
+        cursor: pointer;
+    }
+}

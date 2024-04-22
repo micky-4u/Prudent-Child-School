@@ -6,11 +6,21 @@ import "../css/admission.css"
 import { Student } from "../data";
 
 const Admission = () =>{
+
+    const genStudentIds = () =>{
+        const min = 10000000
+        const student_id = Math.floor(Math.random()*min)
+
+        return String(student_id)
+    }
+    
+    console.log(genStudentIds())
+
     const [modal, setModal] = useState(false)
     const [student, setStudent] = useState(Student)
     const [searchQuery, setSearchQuery] = useState('');
     const [formData, setFormData] = useState({
-        user_id: '',
+        student_id: '',
         email: '',
         f_name: '',
         l_name: '',
@@ -34,7 +44,7 @@ const Admission = () =>{
         console.log(formData);
         // Reset the form after submission
         setFormData({
-            user_id: '',
+            student_id: genStudentIds(),
             email: '',
             f_name: '',
             l_name: '',
@@ -139,7 +149,7 @@ const Admission = () =>{
                                         <label htmlFor="">
                                             Student ID
                                         </label>
-                                        <input value={formData.studentid} onChange={handleChange} requried= "true" type="text" placeholder="23453" />
+                                        <input readonly="true" type="text" placeholder="Auto Generated" />
                                     </div>
                                     <div className="info-data" >
                                         <div className="info-input">
@@ -260,6 +270,9 @@ const Admission = () =>{
 
                                     </div>
 
+                                </div>
+                                <div className="submit">
+                                    <button type= "submit">Submit</button>
                                 </div>
 
                             </form>
