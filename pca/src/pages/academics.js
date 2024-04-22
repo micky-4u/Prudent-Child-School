@@ -21,6 +21,7 @@ const Academics = () =>{
                     <div className="mainView">
                         <div className="">
                             
+                            
                         </div>
                         <div className="notifications"></div>
                     </div>

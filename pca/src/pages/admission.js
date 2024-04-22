@@ -10,14 +10,14 @@ const Admission = () =>{
     const [student, setStudent] = useState(Student)
     const [searchQuery, setSearchQuery] = useState('');
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        user_id: '',
         email: '',
-        phone: '',
-        address: '',
-        dob: '',
-        gender: 'male', // default value
-        course: ''
+        f_name: '',
+        l_name: '',
+        o_name: '',
+        gender: '',
+        nationality: '',
+        date_of_birth: '',
       });
     
       const handleChange = (e) => {
@@ -34,18 +34,14 @@ const Admission = () =>{
         console.log(formData);
         // Reset the form after submission
         setFormData({
-          studentid: '',
-          class: '',
-          section: '',
-          group:'',
-
-          date: '',
-          lastName: '',
-          firstName: '',
-          otherName: '',
-          address: '',
-          dob: '',
-          gender: '',
+            user_id: '',
+            email: '',
+            f_name: '',
+            l_name: '',
+            o_name: '',
+            gender: '',
+            nationality: '',
+            date_of_birth: '',
         });
     }
 

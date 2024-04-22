@@ -1,9 +1,9 @@
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser,PermissionsMixin
 from django.db import models
-from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 # Create your models here.
 
 
-def CustomUserManager(BaseUserManager):
+class CustomUserManager(BaseUserManager):
     "Creating user using email and password"
     def create_user(self, email, password = None):
 
@@ -25,8 +25,8 @@ def CustomUserManager(BaseUserManager):
         return user
 
 
-def CustomUser(AbstractBaseUser):
-    user_id = model.CharField(unique= True, max_length=15)
+class CustomUser(AbstractBaseUser, PermissionsMixin):
+    user_id = models.CharField(unique= True, max_length=15)
     email = models.EmailField(
         verbose_name="email address",
         max_length=255,
@@ -34,6 +34,7 @@ def CustomUser(AbstractBaseUser):
     )
     f_name = models.CharField(max_length=255)
     l_name = models.CharField(max_length=255)
+    o_name = models.CharField(max_length=255, default="")
 
     GENDER_CHOICES = {
         "male":"male",
@@ -42,10 +43,9 @@ def CustomUser(AbstractBaseUser):
     gender = models.CharField(choices=GENDER_CHOICES, max_length= 10)
     nationality = models.CharField(max_length=255, default = "ghanaian")
 
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateField(auto_now=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
     created_at =models.DateTimeField(auto_now_add = True)
     modified_at =models.DateTimeField(auto_now = True)
 
@@ -54,7 +54,7 @@ def CustomUser(AbstractBaseUser):
     objects = CustomUserManager()
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["email"]
+    REQUIRED_FIELDS = []
 
     def __str__(self):
         return self.email
